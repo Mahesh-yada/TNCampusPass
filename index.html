@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/index.css">
+    </head>
+
+    <body>
+        <nav>
+            <li><button>Home</button></li>
+            <li><button>Google Pass</button></li>
+            <li><button>About</button></li>
+        </nav>
+        <div class="main-content">
+        <h1>TNPass</h1>
+        <p>Enter text to generate your QR code:</p>
+        
+        <form id="qr-form">
+            <input type="text" id="qr-input" placeholder="Enter your text here" required>
+            <button type="submit">Generate QR Code</button>
+        </form>
+
+        <div id="qr_container">
+        <img id="mainQr" src="https://upload.wikimedia.org/wikipedia/commons/d/d0/QR_code_for_mobile_English_Wikipedia.svg">
+        </div>
+            
+    
+    </div>
+
+        <div id="qr-code"></div>
+    
+        <script src="https://cdn.jsdelivr.net/npm/qrcode/build/qrcode.min.js"></script>
+        <script>
+            const form = document.getElementById('qr-form');
+            const input = document.getElementById('qr-input');
+            const qrContainer = document.getElementById('qr_container');
+    
+            form.addEventListener('submit', (e) => {
+                e.preventDefault(); // Prevent page reload
+                const text = input.value.trim();
+    
+                if (text) {
+                    QRCode.toCanvas(text, { width: 200 }, (err, canvas) => {
+                        if (err) {
+                            console.error(err);
+                        }
+                        else {
+                            qrContainer.innerHTML = '';
+                            qrContainer.appendChild(canvas);
+                        }
+                    });
+                } else {
+                    alert('Please enter valid text!');
+                }
+            });
+        </script>
+    </body>
+    </body>
+
+</html>
