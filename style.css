@@ -1,0 +1,154 @@
+/* Global Styling */
+* {
+    font-family: "Arial", sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Background Image */
+body {
+    background: url('images/background.png') no-repeat center center fixed;
+    background-size: cover;
+    color: white;
+}
+
+/* Top Ribbon */
+.ribbon {
+    width: 100%;
+    background: linear-gradient(90deg, #004c8c, #51A5E8);
+    text-align: center;
+    padding: 10px;
+    font-size: 18px;
+    color: white;
+    font-weight: bold;
+    position: fixed;
+    top: 0;
+    z-index: 10;
+}
+
+/* Navigation Bar */
+nav {
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 15px 0;
+    margin-top: 50px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 0;
+}
+
+nav li {
+    list-style: none;
+}
+
+nav button {
+    background-color: #51A5E8;
+    border-radius: 40px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    font-size: 16px;
+    color: white;
+    transition: background 0.3s ease-in-out;
+}
+
+nav button:hover {
+    background-color: #004c8c;
+    transform: scale(1.1);
+}
+
+/* Main Content */
+.main-content {
+    background-color: rgba(0, 83, 159, 0.9);
+    border-radius: 20px;
+    position: absolute;
+    left: 50%;
+    top: 55%;
+    transform: translate(-50%, -50%);
+    width: 80%;
+    max-width: 500px;
+    padding: 30px;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.main-content:hover {
+    box-shadow: 0px 0px 15px rgba(255, 255, 255, 0.3);
+}
+
+/* Form Styling */
+form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+input {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    width: 100%;
+    text-align: center;
+    font-size: 16px;
+}
+
+button[type="submit"] {
+    padding: 12px;
+    border-radius: 5px;
+    border: none;
+    background-color: #51A5E8;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    transition: all 0.3s ease-in-out;
+}
+
+button[type="submit"]:hover {
+    background-color: #004c8c;
+    transform: scale(1.05);
+}
+
+/* QR Code Container */
+#qr_container {
+    margin-top: 20px;
+    padding: 10px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+}
+
+
+
+/*dark mode */
+/* @media(prefers-color-scheme: dark) {
+    * {
+        color-scheme:dark;
+    }
+    .main-content {
+        background-color: #00539f;
+    }
+} */
+
+/*light mode */
+/* @media(prefers-color-scheme: light) {
+    * {
+        color-scheme:light;
+    }
+    .main-content {
+        background-color: #00539f;
+    }
+} */
